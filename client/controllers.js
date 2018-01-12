@@ -24,7 +24,11 @@ angular.module('myApp').controller('loginController',
           $scope.loginForm = {};
         });
 
-    };
+      };
+    $scope.register = function () {
+
+        $location.path('/register');
+    }
 
 }]);
 

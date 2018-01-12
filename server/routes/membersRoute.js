@@ -3,13 +3,13 @@ var router = express.Router();
 var passport = require('passport');
 var mangoose = require('mongoose');
 
-var Members = require('../models/members.js');
+var MembersSchema = require('../models/members.js');
 
 router.post('/addMembers', function (req, res) {
 
-
-    return res.status(200).json({ status: "api funcanility successfull" })
-
+    
+    return res.status(200).json({ "key": "member Added Successfully" })    
+   
     
 
 });
@@ -17,8 +17,17 @@ module.exports = router;
 
 
 
-//if (req) {
-//    var myData = new members(req.body);
-//    myData.save();
-//    return res.status(200).json({ status: "api funcanility successfull" })
-//}
+//addMember = function (req, res) {
+//    var data = new MembersSchema(req.body);
+//    data.save(function (err) {
+//        if (err) {
+//            return res.status(200).json({ status: "api funcanility not successfull" })
+
+//        } else {
+
+//            return res.status(200).json({ "key": "member Added Successfully" })
+
+//        }
+
+
+

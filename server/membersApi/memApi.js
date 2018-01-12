@@ -5,6 +5,11 @@
 
 
 
+//if (req) {
+//    var myData = new members(req.body);
+//    myData.save();
+//    return res.status(200).json({ status: "api funcanility successfull" })
+//}
 
 
 
