@@ -3,11 +3,12 @@
     "",
     "\\client",
     "\\client\\partials",
+    "\\client\\partials\\members",
     "\\server",
     "\\server\\membersApi",
     "\\server\\models",
     "\\server\\routes"
   ],
-  "SelectedNode": "\\server\\app.js",
+  "SelectedNode": "\\client\\main.js",
   "PreviewInSolutionExplorer": false
 }

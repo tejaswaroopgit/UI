@@ -1,11 +1,11 @@
-// user model
+// mems model
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var passportLocalMongoose = require('passport-local-mongoose');
 
 
 var Members = new Schema({
-    name: String,
+    name: { unique: true, type: String ,index: true},
     lastname: String,
     age: Number,
     email: String,

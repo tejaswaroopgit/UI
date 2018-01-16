@@ -1,4 +1,5 @@
-angular.module('myApp').controller('loginController',
+angular.module('myApp')
+    .controller('loginController',
   ['$scope', '$location', 'AuthService',
   function ($scope, $location, AuthService) {
 
@@ -32,7 +33,7 @@ angular.module('myApp').controller('loginController',
 
 }]);
 
-angular.module('myApp').controller('logoutController',
+angular.module('myApp').controller('homeController',
   ['$scope', '$location', 'AuthService',
   function ($scope, $location, AuthService) {
 
@@ -43,8 +44,14 @@ angular.module('myApp').controller('logoutController',
         .then(function () {
           $location.path('/login');
         });
+      };
 
-    };
+    $scope.getMember = function () {
+   //     console.log("enterd the controller");
+        $location.path('/getMembers');
+    }, function (error) {
+        console.log("error occurred");
+    }
 
 }]);
 
