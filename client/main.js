@@ -4,7 +4,8 @@ myApp.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'partials/home.html',
-      access: {restricted: true}
+      access: { restricted: true },
+      controller:'homeController'
     })
     .when('/login', {
       templateUrl: 'partials/login.html',
@@ -20,15 +21,22 @@ myApp.config(function ($routeProvider) {
       controller: 'registerController',
       access: {restricted: false}
     })
-    .when('/member', {
+    .when('/member/:Id', {
         templateUrl: 'partials/members/members.html',
-        controller:'membersCtrl'
+        controller: 'membersAddEditCtrl',
+        access: { restricted: false }
      
     })
     .when('/two', {
       template: '<h1>This is page two!</h1>',
       access: {restricted: false}
-    })
+      })
+      .when('/getMembers', {
+          templateUrl: 'partials/members/members-list-page.html',
+          controller: 'membersListCtrl',
+          access: { restricted: false }
+      })
+
     .otherwise({
       redirectTo: '/'
     });

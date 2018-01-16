@@ -1,12 +1,17 @@
-<p>Please enter the details :</p>
-<label>Enter the name: </label>
-<input type="text" ng-model="user.name" style="border-radius:5px" class="form-control" />
-<label>Enter the Last name: </label>
-<input type="text" ng-model="user.lastName" style="border-radius:5px" class="form-control" />
-<label>Enter the age: </label>
-<input type="number" ng-model="user.age" class="form-control" style="border-radius:5px" />
-<label>Enter the email: </label>
-<input type="text" ng-model="user.email" class="form-control" style="border-radius:5px" />
-<label>Enter the education: </label>
-<input type="text" ng-model="user.education" class="form-control" style="border-radius:5px" /><br>
-<button type="button" ng-click="onSubmit(user)" class="btn btn-primary" style="border-radius:5px">Submit</button>
+<div style="background-color:lightgreen;margin:100px 10px 10px 10px;border-radius:10px" >
+    <br>
+        <p>Please enter the details :</p>
+        <label>Enter the name: </label>
+        <input type="text" ng-model="user.name" style="border-radius:5px" class="form-control"  required maxlength="10"/>
+        <label>Enter the Last name: </label>
+        <input type="text" ng-model="user.lastname" style="border-radius:5px" class="form-control" />
+        <label>Enter the age: </label>
+        <input type="number" ng-model="user.age" class="form-control" style="border-radius:5px" />
+        <label>Enter the email: </label>
+        <input type="text" ng-model="user.email" class="form-control" style="border-radius:5px" />
+        <label>Enter the education: </label>
+        <input type="text" ng-model="user.education" class="form-control" style="border-radius:5px" /><br>
+        <button type="button" ng-click="onSubmit(user)" class="btn btn-primary" style="border-radius:5px">Submit</button>
+        <button type="button" ng-click="onCancel()"  class="btn btn-primary" style="border-radius:5px">cancel</button>
+        <br>
+</div>
