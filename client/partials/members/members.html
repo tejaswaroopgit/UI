@@ -1,8 +1,14 @@
-<div style="background-color:lightgreen;margin:100px 10px 10px 10px;border-radius:10px" >
-    <br>
-        <p>Please enter the details :</p>
-        <label>Enter the name: </label>
-        <input type="text" ng-model="user.name" style="border-radius:5px" class="form-control"  required maxlength="10"/>
+<form name="addUser">
+    <div style="background-color:lightgreen;margin:100px 10px 10px 10px;border-radius:10px">
+        <br>
+        <div>
+            <p>Please enter the details :</p>
+            <label>Enter the name: </label>
+            <input type="text" ng-model="user.name" name="name" style="border-radius:5px" class="form-control" required maxlength="10" minlength="3" />
+            <span style="color:red" ng-show="addUser.name.$dirty && addUser.name.$invalid">
+                <span ng-show="addUser.name.$error.required">Name is required.</span>
+            </span>
+        </div>
         <label>Enter the Last name: </label>
         <input type="text" ng-model="user.lastname" style="border-radius:5px" class="form-control" />
         <label>Enter the age: </label>
@@ -11,7 +17,9 @@
         <input type="text" ng-model="user.email" class="form-control" style="border-radius:5px" />
         <label>Enter the education: </label>
         <input type="text" ng-model="user.education" class="form-control" style="border-radius:5px" /><br>
-        <button type="button" ng-click="onSubmit(user)" class="btn btn-primary" style="border-radius:5px">Submit</button>
-        <button type="button" ng-click="onCancel()"  class="btn btn-primary" style="border-radius:5px">cancel</button>
+        <button type="button" ng-click="onSubmit(user)" ng-disabled="!addUser.$valid"  class="btn btn-primary" style="border-radius:5px">Submit</button>
+        <button type="button" ng-click="onCancel()" class="btn btn-primary" style="border-radius:5px">cancel</button>
         <br>
-</div>
+        <br>
+    </div>
+</form>

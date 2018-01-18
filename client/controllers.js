@@ -27,7 +27,6 @@ angular.module('myApp')
 
       };
     $scope.register = function () {
-
         $location.path('/register');
     }
 
@@ -51,6 +50,17 @@ angular.module('myApp').controller('homeController',
         $location.path('/getMembers');
     }, function (error) {
         console.log("error occurred");
+    }
+
+    $scope.getMaterialsData = function () {
+        $location.path('/getMaterials');
+    }
+
+    $scope.getClientsData = function () {
+        $location.path('/getMaterials');
+    }
+    $scope.getFinancesData = function () {
+        $location.path('/getFinances');
     }
 
 }]);
