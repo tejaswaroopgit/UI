@@ -66,19 +66,21 @@ myApp.controller('membersAddEditCtrl', function ($scope, $log, $http, membersSer
         })
     }
     // function for the update icon            
-
+   
     $scope.onSubmit = function (users) {
-        if (updateId === ":Id") {
 
+     
+        if (updateId === ":Id") {            
             console.log("entered the submit")
             console.log(users)
             membersService.memberRegister(users);
             $location.path('/getMembers')       
+            
 
         }
         else {
             console.log(updateId)
-            membersService.updateMember( users, function (success) {
+          membersService.updateMember( users, function (success) {
                 console.log(users);
                 $location.path('/getMembers')
 
@@ -89,62 +91,37 @@ myApp.controller('membersAddEditCtrl', function ($scope, $log, $http, membersSer
 
     }
 }
-        
-      
     $scope.onCancel = function () {
         $location.path('/getMembers')
     }
         
     // this is for the home page button to get the members ----redericted after clicking on members
-   
-
-  
-
-
-
     })
 
-myApp.controller('membersListCtrl', function ($scope, $log, $http, membersService, $location,$routeParams) {
-    $scope.members = []; 
+myApp.controller('membersListCtrl', function ($scope, $log, $http, membersService, $location, $routeParams) {
+    $scope.members = [];
 
     // get all members and display  them from this 
     membersService.getMembers(function (success) {
         $scope.members = success.data;
-       // console.log($scope.members);
+        // console.log($scope.members);
         //console.log(success.data);
     })
     $scope.updateMember1 = function (Id) {
-       // console.log(Id)
-        $location.path('/member/'+Id);       
+        // console.log(Id)
+        $location.path('/member/' + Id);
     }
 
     // add member button in list page  
-        $scope.addMemberOrUpdatemember = function () {
-               $location.path('/member/:Id');
-           }    
+    $scope.addMemberOrUpdatemember = function () {
+        $location.path('/member/:Id');
+    }
 
     $scope.deleteMember = function (Id) {
         console.log("Enterd the delete loop");
         membersService.deleteMember(Id);
-      //  console.log(Id);
-        location.reload();     
-      
+        //  console.log(Id);
+        location.reload();
+
     }
-})
-
-
-
-
-
-
-
-
-        //$scope.updateMember1 = function (Id) {
-        //    $location.path('/member/:id');
-        //    console.log(Id)
-        //    membersService.findMember($routeParams.Id, function (success) {
-        //        if (success.data.status) {
-        //            $scope.user = success.data
-        //            console.log(success.data);
-
-        //}
+});

@@ -5,14 +5,15 @@
 
     <div >
 
-        <button type="button" ng-click="addMemberOrUpdatemember()" class="btn btn-primary" style="border-radius:5px;margin:10px 0px 0px 950px">Add Member</button>
+        <button type="button" ng-click="addMemberOrUpdatemember()" class="btn btn-primary" style="border-radius:5px;margin:10px 0px 0px 950px"> <img src="../images/p.png"  height="30" width="30"/> </button>
     </div><br>
 
     <div>
-      
+        <!--<label for="search" style="font-size:25px">Search:</label>-->
+        <input type="search" style="background-color: skyblue;border-radius:10px;margin:10px 5px 0px 850px" ng-model="test" name="search" placeholder="Search..">
         <div>
-            <table class="table">
-                <tr>
+            <table class="table" >
+                <tr> 
                     <th>Name</th>
                     <th>Lastname</th>
                     <th>Age</th>
@@ -21,21 +22,21 @@
                 </tr>
 
                 <tbody>
-                    <tr ng-repeat="member in members">
+                    <tr ng-repeat="member in members  | filter :test">
 
                         <td>{{member.name | uppercase }}</td>
-                        <td>{{member.lastname}}</td>
-                        <td>{{member.age}}</td>
+                        <td>{{member.lastname | uppercase}}</td>
+                        <td>{{member.age }}</td>
                         <td>{{member.email}}</td>
                         <td>{{member.education}}</td>
 
                         <td data-title="'Action'" class="col-sm-2">
 
-                            <button type="button" ng-click="updateMember1(member._id)">
-                                <span class="glyphicon glyphicon-pencil"></span>
+                            <button type="button" ng-click="updateMember1(member._id)"  style="background-color: darkseagreen ;border-radius:5px">
+                                <span class="glyphicon glyphicon-edit"  ></span>
                             </button>
-                            <button type="button" ng-click="deleteMember(member._id)">
-                                <span class="glyphicon glyphicon-remove"></span>
+                            <button type="button" ng-click="deleteMember(member._id)"   style="background-color: indianred;border-radius:5px ">
+                                <span class="glyphicon glyphicon-trash"  ></span>
                             </button>
 
                             <!--<a class="btn btn-primary" ng-click="updateMember(member._id)">

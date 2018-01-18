@@ -27,8 +27,8 @@ myApp.config(function ($routeProvider) {
         access: { restricted: false }
      
     })
-    .when('/two', {
-      template: '<h1>This is page two!</h1>',
+    .when('/getMaterials', {
+        templateUrl: 'partials/materials/materials.html',
       access: {restricted: false}
       })
       .when('/getMembers', {
@@ -36,6 +36,12 @@ myApp.config(function ($routeProvider) {
           controller: 'membersListCtrl',
           access: { restricted: false }
       })
+      .when('/getFinances', {
+          templateUrl: 'partials/finances/finances.html',
+          controller: 'membersListCtrl',
+          access: { restricted: false }
+      })
+
 
     .otherwise({
       redirectTo: '/'
