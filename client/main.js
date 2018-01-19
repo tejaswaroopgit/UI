@@ -41,6 +41,11 @@ myApp.config(function ($routeProvider) {
           controller: 'membersListCtrl',
           access: { restricted: false }
       })
+      .when('/clientsList', {
+          templateUrl: 'partials/clients/clientsList.html',
+          controller: 'membersListCtrl',
+          access: { restricted: false }
+      })
 
 
     .otherwise({

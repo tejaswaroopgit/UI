@@ -1,15 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\client",
-    "\\client\\Directives",
-    "\\client\\partials",
-    "\\client\\partials\\finances",
     "\\server",
     "\\server\\membersApi",
     "\\server\\models",
     "\\server\\routes"
   ],
-  "SelectedNode": "\\client\\Directives\\navBar.js",
+  "SelectedNode": "\\client",
   "PreviewInSolutionExplorer": false
 }
