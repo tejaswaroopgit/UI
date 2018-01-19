@@ -57,7 +57,7 @@ angular.module('myApp').controller('homeController',
     }
 
     $scope.getClientsData = function () {
-        $location.path('/getMaterials');
+        $location.path('/clientsList');
     }
     $scope.getFinancesData = function () {
         $location.path('/getFinances');
