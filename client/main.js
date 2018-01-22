@@ -43,9 +43,15 @@ myApp.config(function ($routeProvider) {
       })
       .when('/clientsList', {
           templateUrl: 'partials/clients/clientsList.html',
-          controller: 'membersListCtrl',
+          controller: 'clientsCtrl',
           access: { restricted: false }
       })
+      .when('/addClients', {
+          templateUrl: 'partials/clients/addEditClients.html',
+          controller: 'addEditClientsCtrl',
+          access: { restricted: false }
+      })
+
 
 
     .otherwise({

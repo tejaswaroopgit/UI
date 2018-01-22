@@ -1,11 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\client",
+    "\\client\\partials",
     "\\server",
-    "\\server\\membersApi",
     "\\server\\models",
     "\\server\\routes"
   ],
-  "SelectedNode": "\\client",
+  "SelectedNode": "\\client\\partials\\Clients",
   "PreviewInSolutionExplorer": false
 }

@@ -62,6 +62,9 @@ angular.module('myApp').controller('homeController',
     $scope.getFinancesData = function () {
         $location.path('/getFinances');
     }
+    $scope.getResultsData = function () {
+        console.log("Entered the function")
+    }
 
 }]);
 

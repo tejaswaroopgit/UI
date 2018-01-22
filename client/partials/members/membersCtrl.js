@@ -104,6 +104,7 @@ myApp.controller('membersListCtrl', function ($scope, $log, $http, membersServic
     // get all members and display  them from this 
     membersService.getMembers(function (success) {
         $scope.members = success.data;
+        console.log(success.data.length)
         // console.log($scope.members);
         //console.log(success.data);
     })
