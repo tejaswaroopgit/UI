@@ -4,9 +4,12 @@
     "\\client",
     "\\client\\partials",
     "\\server",
+    "\\server\\membersApi",
     "\\server\\models",
-    "\\server\\routes"
+    "\\server\\routes",
+    "\\test",
+    "\\test\\testFiles"
   ],
-  "SelectedNode": "\\client\\partials\\Clients",
+  "SelectedNode": "\\server\\routes\\membersRoute.js",
   "PreviewInSolutionExplorer": false
 }
