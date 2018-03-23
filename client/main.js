@@ -51,6 +51,12 @@ myApp.config(function ($routeProvider) {
           controller: 'addEditClientsCtrl',
           access: { restricted: false }
       })
+      .when('/addClientsNames', {
+          templateUrl: 'partials/clients/addEditClientName.html',
+          controller: 'addEditClientsNameCtrl',
+          access: { restricted: false }
+      })
+
 
 
 

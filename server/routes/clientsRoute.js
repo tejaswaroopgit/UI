@@ -29,13 +29,17 @@ router.get('/getClients', function (req,res) {
 
 // Find One for the clients for the id
 
-router.get('/getReqClients/:Id', function (req, res) {
+router.get('/getReqClients/:id', function (req, res) {
     console.log("entered the get req clients route....!!")
-    clientsFun.getReqClient(req.params.id, function (result) {
-        console.log(result)
-        res.json(result);
-    })
+    clientsFun.getReqClient(req, function ( result) {
+   
+        res.send(result)
 
+       // if (err) console.log("error occured while fetching the data"+   result)
+       // else res.json(result)
+      
+    })
+  
 })
 
 

@@ -1,12 +1,78 @@
 <h1>Find all the Clients List here:</h1>
-<button type="button" ng-click="addClient()"><img src="../images/p.png" height="30" width="30" /></button>
- 
-<div  class="container">
+<button type="button" ng-click="addClientname()" class="btn btn-primary" style="border-radius:15px;margin:5px 0px 0px 20px"> <img src="../images/p.png" height="30" width="30" /> </button>
+
+<!--<button type="button" ng-click="clientNames()">Check</button>-->
+<div class="container">
     <div class="row">
-        <div class="col-xs-3" style="border:solid;padding:20px;border-radius:5px" >
-            Here is the name of the client
+        <div class="col-xs-1" style="border:solid;margin:10px; padding:10px; border-radius:100px;background-color:chartreuse" ng-repeat="names in clientsNames">
+            <a style="color:blue">{{names.clientsName}} </a>
         </div>
 
     </div>
 
+</div>
+
+
+
+
+<button type="button" ng-click="addClient()" class="btn btn-primary" style="border-radius:15px;margin:10px 0px 0px 1020px"> <img src="../images/p.png" height="30" width="30" /> </button>
+<br>
+
+<div>
+    <!--<label for="search" style="font-size:25px">Search:</label>-->
+    <input type="search" style="background-color: skyblue;border-radius:30px;margin:10px 5px 0px 920px" ng-model="test" name="search" placeholder="Search.."><br>
+    no of emolpyees:{{count}}
+    <div>
+        <table class="table table-striped" style="background-color:skyblue">
+            <tr>
+                <th>clientName</th>
+                <th>clentLocation</th>
+                <th>clentEmail</th>
+                <th>clientAdress</th>
+                <th>clientJob</th>
+                <th>noOfParts</th>
+                <th>pricePerPart</th>
+                <th>clientStartDate</th>
+                <th>clientJobExpiry</th>
+                <th>clientComments</th>
+                <th></th>
+            </tr>
+
+            <tbody>
+                <tr ng-repeat="client in result   | filter :test">
+
+                    <td>{{client.clientName | uppercase }}</td>
+                    <td>{{client.clentLocation | uppercase}}</td>
+                    <td>{{client.clentEmail }}</td>
+                    <td>{{client.clientAdress}}</td>
+                    <td>{{client.clientJob}}</td>
+                    <td>{{client.noOfParts}}</td>
+                    <td>{{client.pricePerPart}}</td>
+                    <td>{{client.clientStartDate}}</td>
+                    <td>{{client.clientJobExpiry}}</td>
+                    <td>{{client.clientComments}}</td>
+                    <td data-title="'Action'" class="col-sm-2">
+
+                        <button type="button" ng-click="updateMember1(client._id)" style="background-color: darkseagreen ;border-radius:5px">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                        <button type="button" ng-click="deleteMember(client._id)" style="background-color: indianred;border-radius:5px ">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+
+                        <!--<a class="btn btn-primary" ng-click="updateMember(member._id)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>-->
+                        <!--<a class="btn btn-primary" ng-click="deleteMember(member._id)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>-->
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+    <!--<button class="btn btn-default" ui-sref="addDrivers">AddDriver</button>-->
+</div>
 </div>

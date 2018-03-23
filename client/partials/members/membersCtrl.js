@@ -100,10 +100,11 @@ myApp.controller('membersAddEditCtrl', function ($scope, $log, $http, membersSer
 
 myApp.controller('membersListCtrl', function ($scope, $log, $http, membersService, $location, $routeParams) {
     $scope.members = [];
-
+    $scope.count=""
     // get all members and display  them from this 
     membersService.getMembers(function (success) {
         $scope.members = success.data;
+        $scope.count = success.data.length
         console.log(success.data.length)
         // console.log($scope.members);
         //console.log(success.data);
