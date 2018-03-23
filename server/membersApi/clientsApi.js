@@ -20,47 +20,48 @@ clientsFun.prototype.addClient = function (clientInfo, callBack) {
 
         //   callBack(retObj.messages.push = "enter the valid name of the client...!!")
 
-        if (clientInfo.body.clentLocation !== null) {
+        if (clientInfo.body.clentLocation !== null || clientInfo.body.clentLocation !== "" ) {
             console.log("entered the client location if cond...!!")
             //    callBack(retObj.messages.push = "enter the valid location of the client...!!")
-        }
-        if (clientInfo.body.clentEmail !== null) {
-            console.log("entered the client email if cond...!!")
-            //    callBack(retObj.messages.push = "enter the valid email of the client...!!")
+        
+            if (clientInfo.body.clentEmail !== null) {
+                console.log("entered the client email if cond...!!")
+                //    callBack(retObj.messages.push = "enter the valid email of the client...!!")
 
-            if (clientInfo.body.clientAdress !== null) {
-                console.log("entered the client address if cond...!!")
-                //       callBack(retObj.messages.push = "enter the valid Adress of the client...!!")
+                if (clientInfo.body.clientAdress !== null) {
+                    console.log("entered the client address if cond...!!")
+                    //       callBack(retObj.messages.push = "enter the valid Adress of the client...!!")
 
-                if (clientInfo.body.noOfParts !== null) {
-                    console.log("entered the client no of parts if cond...!!")
-                    //         callBack(retObj.messages.push = "enter the valid no of parts of the client...!!")
+                    if (clientInfo.body.noOfParts !== null) {
+                        console.log("entered the client no of parts if cond...!!")
+                        //         callBack(retObj.messages.push = "enter the valid no of parts of the client...!!")
 
-                    if (clientInfo.body.Number !== null) {
-                        console.log("entered the client number if cond...!!")
-                        //          callBack(retObj.messages.push = "enter the valid name of the client...!!")
+                        if (clientInfo.body.Number !== null) {
+                            console.log("entered the client number if cond...!!")
+                            //          callBack(retObj.messages.push = "enter the valid name of the client...!!")
 
-                        console.log("entered the final else cond...!!")
-                        new clients({
-                            clientName: clientInfo.body.clientName,
-                            lastname: clientInfo.body.clentLocation,
-                            clentEmail: clientInfo.body.clentEmail,
-                            clientAdress: clientInfo.body.clientAdress,
-                            noOfParts: clientInfo.body.noOfParts,
-                            pricePerPart: clientInfo.body.Number,
-                            clientJob: clientInfo.body.clientJob,
-                            clientStartDate: clientInfo.body.clientStartDate,
-                            clientJobExpiry: clientInfo.body.clientJobExpiry,
-                            clientComments: clientInfo.body.clientComments
+                            console.log("entered the final else cond...!!")
+                            new clients({
+                                clientName: clientInfo.body.clientName,
+                                lastname: clientInfo.body.clentLocation,
+                                clentEmail: clientInfo.body.clentEmail,
+                                clientAdress: clientInfo.body.clientAdress,
+                                noOfParts: clientInfo.body.noOfParts,
+                                pricePerPart: clientInfo.body.Number,
+                                clientJob: clientInfo.body.clientJob,
+                                clientStartDate: clientInfo.body.clientStartDate,
+                                clientJobExpiry: clientInfo.body.clientJobExpiry,
+                                clientComments: clientInfo.body.clientComments
 
-                        }).save(function (err, doc) {
-                            console.log("entered the save function condition.....!")
+                            }).save(function (err, doc) {
+                                console.log("entered the save function condition.....!")
 
-                            if (err) callBack(retObj.messages.push = "Error Occured While saving the member")
-                            else callBack(retObj.messages.push = "Successfully added client");
-                        })
+                                if (err) callBack(retObj.messages.push = "Error Occured While saving the member")
+                                else callBack(retObj.messages.push = "Successfully added client");
+                            })
 
 
+                        }
                     }
                 }
             }
@@ -80,17 +81,18 @@ clientsFun.prototype.getClient = function (callBack) {
 
     clients.find(function (err, result) {
         console.log("entered the get client function....!! ")
-        console.log(result)
         if (err) callBack(retObj.messages.push = "error occured while fetching data...!!")
         else callBack(result)
 
     })
 }
 
-clientsFun.prototype.getReqClient = function (id, callBack) {
-
-    clients.findById(id,function (result) {
-        callBack(result)
+clientsFun.prototype.getReqClient = function (req, callBack) {
+    console.log(req.params.id)
+    clients.findById({ _id: req.params.id }, function (err, result) {
+        
+        if (err) console.log("error occured")
+        else callBack(result)       
     })
 }
 

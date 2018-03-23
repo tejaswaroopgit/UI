@@ -17,6 +17,7 @@ mongoose.connect('mongodb://localhost/mean-auth');
 var User = require('./models/user.js');
 var Members = require('./models/members.js');
 var Clients = require('./models/clients');
+var clientsName = require('./models/clientsName')
 
 
 // create instance of express
@@ -26,6 +27,7 @@ var app = express();
 var routes = require('./routes/api.js');
 var route = require('./routes/membersRoute.js');
 var clientRoute = require('./routes/clientsRoute.js');
+var clientsNameRoute = require('./routes/clientNameRoute')
 
 // define middleware
 app.use(express.static(path.join(__dirname, '../client')));
@@ -51,6 +53,7 @@ passport.deserializeUser(User.deserializeUser());
 app.use('/user/', routes);
 app.use('/members/', route);
 app.use('/clients/', clientRoute);
+app.use('/clientsNames/', clientsNameRoute)
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../client', 'index.html'));

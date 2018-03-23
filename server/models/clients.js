@@ -6,12 +6,12 @@ var Clients = new Schema({
     clientName: { unique: true, type: String, index: true },
     clentLocation: String,
     clentEmail: String,
-    clientAdress: Number,
+    clientAdress: String,
+    clientJob: String,
     noOfParts: Number,
     pricePerPart: Number,
-    clientJob: String,
-    clientStartDate: String,
-    clientJobExpiry: String,
+    clientStartDate: Date,
+    clientJobExpiry: Date,
     clientComments: String
     
 })

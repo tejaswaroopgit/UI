@@ -4,8 +4,8 @@
         <div>
             <p>Please enter the details :</p>
             <label>Enter the ClientName: </label>
-            <input type="text" name="name" style="border-radius:10px" ng-model="client.clientName" class="form-control" placeholder="Client Name" required maxlength="10" minlength="3" />
-            <span style="color:red" ng-show="addUser.name.$dirty && addUser.name.$invalid">
+            <select type="text" name="name" ng-options="name.id as name.clientsName for name in clientsNames" style="border-radius:10px" ng-model="client.clientName" class="form-control" placeholder="Client Name" required maxlength="10" minlength="3" />
+            <span style="color:red"  ng-show="addUser.name.$dirty && addUser.name.$invalid">
                 <span ng-show="addUser.name.$error.required">Name is required.</span>
             </span>
             <label>Enter the clientLocation: </label>
@@ -15,12 +15,12 @@
         <div>
             <!--<label>Enter the clientLocation: </label>
             <input type="text" style="border-radius:10px " ng-model="client.clentLocation" placeholder="Client Location" class="form-control" />-->
-            <label>Enter the Adress: </label>
-            <input type="text" class="form-control" ng-model="client.clientAdress" placeholder="Client Adress" style="border-radius:10px" />
+            <label>Enter the Email: </label>
+            <input type="text" class="form-control" ng-model="client.clentEmail" placeholder="Client Email" style="border-radius:10px" />
         </div>
         <div>
-            <label>Enter the ClientEmail: </label>
-            <input type="email" class="form-control" ng-model="client.clentEmail" placeholder="Client Email" style="border-radius:10px" />
+            <label>Enter the Address: </label>
+            <input type="text" class="form-control" ng-model="client.clientAdress" placeholder="Client Address" style="border-radius:10px" />
             <label>Enter the Job Required: </label>
             <input type="text" ng-model="client.clientJob" placeholder="Client Job Required" class="form-control" style="border-radius:10px" />
         </div>
@@ -30,6 +30,7 @@
             <label>Enter the Price Per Part: </label>
             <input type="number" ng-model="client.pricePerPart" placeholder="Prices per Part " class="form-control" style="border-radius:10px" />
         </div>
+      
         <div>
             <label>Enter the Start Date: </label>
             <input type="date" ng-model="client.clientStartDate" placeholder="Date Of Start" class="form-control" style="border-radius:10px" />
@@ -37,7 +38,7 @@
             <input type="date" ng-model="client.clientJobExpiry" placeholder="Client Of Due" class="form-control" style="border-radius:10px" />
             </div>
             <label>Enter the Comments: </label>
-            <textarea typeof="text" class="form-control" ng-model="client.clentLocation" placeholder="Please enter any client specifications here....." style="border-radius:10px"> </textarea> <br>
+            <textarea typeof="text" class="form-control" ng-model="client.clientComments" placeholder="Please enter any client specifications here....." style="border-radius:10px"> </textarea> <br>
             <button type="button" ng-click="goToClientsPage(client)" ng-disabled="!ClientData.$valid" class="btn btn-primary" style="border-radius:10px">Submit</button>
             <button type="button" ng-click="onCancel()" class="btn btn-primary" style="border-radius:10px">cancel</button>
             <br>
