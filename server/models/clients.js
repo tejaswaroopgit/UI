@@ -3,9 +3,9 @@ var Schema = mongoose.Schema;
 var passportLocalMongoose = require('passport-local-mongoose');
 
 var Clients = new Schema({
-    clientName: { unique: true, type: String, index: true },
-    clentLocation: String,
-    clentEmail: String,
+    clientName: String,
+    clientLocation: String,
+    clientEmail: String,
     clientAdress: String,
     clientJob: String,
     noOfParts: Number,

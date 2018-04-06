@@ -66,3 +66,6 @@ typings/
 # MAC OS
 .DS_Store
 !/server/apis/truckAPIs.js
+.vs/slnx.sqlite
+*.sqlite
+*.sqlite

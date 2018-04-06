@@ -20,11 +20,11 @@ clientsFun.prototype.addClient = function (clientInfo, callBack) {
 
         //   callBack(retObj.messages.push = "enter the valid name of the client...!!")
 
-        if (clientInfo.body.clentLocation !== null || clientInfo.body.clentLocation !== "" ) {
+        if (clientInfo.body.clientLocation !== null || clientInfo.body.clentLocation !== "" ) {
             console.log("entered the client location if cond...!!")
             //    callBack(retObj.messages.push = "enter the valid location of the client...!!")
         
-            if (clientInfo.body.clentEmail !== null) {
+            if (clientInfo.body.clientEmail !== null) {
                 console.log("entered the client email if cond...!!")
                 //    callBack(retObj.messages.push = "enter the valid email of the client...!!")
 
@@ -43,11 +43,11 @@ clientsFun.prototype.addClient = function (clientInfo, callBack) {
                             console.log("entered the final else cond...!!")
                             new clients({
                                 clientName: clientInfo.body.clientName,
-                                lastname: clientInfo.body.clentLocation,
-                                clentEmail: clientInfo.body.clentEmail,
+                                clientLocation: clientInfo.body.clientLocation,
+                                clientEmail: clientInfo.body.clientEmail,
                                 clientAdress: clientInfo.body.clientAdress,
                                 noOfParts: clientInfo.body.noOfParts,
-                                pricePerPart: clientInfo.body.Number,
+                                pricePerPart: clientInfo.body.pricePerPart,
                                 clientJob: clientInfo.body.clientJob,
                                 clientStartDate: clientInfo.body.clientStartDate,
                                 clientJobExpiry: clientInfo.body.clientJobExpiry,
@@ -94,6 +94,26 @@ clientsFun.prototype.getReqClient = function (req, callBack) {
         if (err) console.log("error occured")
         else callBack(result)       
     })
+}
+
+clientsFun.prototype.updateReqClient = function (req, callBack) {
+    console.log(req.body)
+    console.log("Entered the clients API..!!")
+    clients.findOneAndUpdate({ _id: req.params.id }, req.body, function (err, success) {
+        if (err) console.log("error occurred..!!"+err)
+        else callBack(success)
+
+    })
+}
+
+clientsFun.prototype.deleteReqClient = function (req, callBack) {
+    console.log("entered t he delete function..!!")
+    clients.findByIdAndRemove({ _id: req.params.id }, function (err,success) {
+        console.log("entered the delete api..!!")
+        if (err) console.log("error occurred..!!")
+        else callBack(success)
+    })
+
 }
 
 

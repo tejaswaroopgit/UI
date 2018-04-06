@@ -1,9 +1,13 @@
-.table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
+.resultsDiv 
+{   
+    
+    background-color: lightyellow;
+    border: solid;
+    border-radius: 20px;
 }
 
-.th, td {
-    padding: 5px;
-    text-align: left;
+.table {
+ 
+    border-radius:10px;
+    background-color: lightcyan;
 }

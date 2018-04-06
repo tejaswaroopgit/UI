@@ -38,7 +38,7 @@ myApp.config(function ($routeProvider) {
       })
       .when('/getFinances', {
           templateUrl: 'partials/finances/finances.html',
-          controller: 'membersListCtrl',
+          controller: 'financeCtrl',
           access: { restricted: false }
       })
       .when('/clientsList', {
@@ -46,10 +46,14 @@ myApp.config(function ($routeProvider) {
           controller: 'clientsCtrl',
           access: { restricted: false }
       })
-      .when('/addClients', {
+      .when('/addClients/:Id', {
           templateUrl: 'partials/clients/addEditClients.html',
           controller: 'addEditClientsCtrl',
           access: { restricted: false }
+      })
+      .when('/resultsPage', {
+          templateUrl: 'partials/Results/results.html',
+        
       })
       .when('/addClientsNames', {
           templateUrl: 'partials/clients/addEditClientName.html',

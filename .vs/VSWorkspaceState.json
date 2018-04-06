@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\client",
+    "\\client\\css",
+    "\\client\\Directives",
     "\\client\\partials",
-    "\\server",
-    "\\server\\membersApi",
-    "\\server\\models",
-    "\\server\\routes",
-    "\\test",
-    "\\test\\testFiles"
+    "\\client\\partials\\Clients",
+    "\\client\\partials\\finances",
+    "\\client\\partials\\materials",
+    "\\client\\partials\\members",
+    "\\server"
   ],
-  "SelectedNode": "\\server\\routes\\membersRoute.js",
+  "SelectedNode": "\\client\\partials\\Clients\\clientsList.html",
   "PreviewInSolutionExplorer": false
 }

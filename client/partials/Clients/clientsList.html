@@ -23,7 +23,7 @@
     <input type="search" style="background-color: skyblue;border-radius:30px;margin:10px 5px 0px 920px" ng-model="test" name="search" placeholder="Search.."><br>
     no of emolpyees:{{count}}
     <div>
-        <table class="table table-striped" style="background-color:skyblue">
+        <table class="table table-hover table">
             <tr>
                 <th>clientName</th>
                 <th>clentLocation</th>
@@ -42,21 +42,21 @@
                 <tr ng-repeat="client in result   | filter :test">
 
                     <td>{{client.clientName | uppercase }}</td>
-                    <td>{{client.clentLocation | uppercase}}</td>
-                    <td>{{client.clentEmail }}</td>
+                    <td>{{client.clientLocation | uppercase}}</td>
+                    <td>{{client.clientEmail }}</td>
                     <td>{{client.clientAdress}}</td>
                     <td>{{client.clientJob}}</td>
                     <td>{{client.noOfParts}}</td>
                     <td>{{client.pricePerPart}}</td>
-                    <td>{{client.clientStartDate}}</td>
-                    <td>{{client.clientJobExpiry}}</td>
+                    <td>{{client.clientStartDate|date:'MM dd yyyy' }}</td>
+                    <td>{{client.clientJobExpiry|date:'MM dd, yyyy' }}</td>
                     <td>{{client.clientComments}}</td>
                     <td data-title="'Action'" class="col-sm-2">
 
-                        <button type="button" ng-click="updateMember1(client._id)" style="background-color: darkseagreen ;border-radius:5px">
+                        <button type="button" ng-click="updateClient(client._id)" style="background-color: darkseagreen ;border-radius:5px">
                             <span class="glyphicon glyphicon-edit"></span>
                         </button>
-                        <button type="button" ng-click="deleteMember(client._id)" style="background-color: indianred;border-radius:5px ">
+                        <button type="button" ng-click="deleteClient(client._id)" style="background-color: indianred;border-radius:5px ">
                             <span class="glyphicon glyphicon-trash"></span>
                         </button>
 
@@ -75,4 +75,4 @@
     </div>
     <!--<button class="btn btn-default" ui-sref="addDrivers">AddDriver</button>-->
 </div>
-</div>
+

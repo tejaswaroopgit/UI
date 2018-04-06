@@ -65,6 +65,9 @@ angular.module('myApp').controller('homeController',
     $scope.getResultsData = function () {
         console.log("Entered the function")
     }
+    $scope.goToResultsPage = function () {
+        $location.path('/resultsPage');
+    }
 
 }]);
 

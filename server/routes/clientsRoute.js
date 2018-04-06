@@ -43,6 +43,26 @@ router.get('/getReqClients/:id', function (req, res) {
 })
 
 
+// Update route
+router.put('/updateReqClient/:id', function (req, res) {
+    console.log("entered the clients update route..!!")
+    clientsFun.updateReqClient(req, function (err, success) {
+        if (err) console.log("error occurred..!!")
+        else console.log("successfully updated the client..!!")
+
+    })
+})
+
+
+//Delete Route...!!
+router.delete('/deleteReqClient/:id', function (req,res) {
+   console.log("entered the delete route..!!")
+    clientsFun.deleteReqClient(req, function ( response) {
+     
+       res.send("deleted successfully..!!")
+    })
+})
+
 module.exports = router;
 
 
